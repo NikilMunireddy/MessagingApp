@@ -7,7 +7,7 @@ class Message extends Component {
       <div>
         {this.props.message}
       </div>
-    )
+    );
   }
 }
 export default Message

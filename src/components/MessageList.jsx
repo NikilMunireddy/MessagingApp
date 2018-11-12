@@ -17,6 +17,7 @@ class MessageList extends Component {
       try:''
     };
     let group=this.props.group
+    
     let app = this.props.db.database().ref(group);
     app.on('value', snapshot => {
 
@@ -59,9 +60,10 @@ class MessageList extends Component {
                         <div class="triangle-isosceles left ">
                    <a> <Message message = {message.message.split("++??*:;:;*??++")[0]} /></a>
                      <Message message = {message.message.split("++??*:;:;*??++")[1]} />
+                    <i className="timestamp"><Message message = {message.message.split("++??*:;:;*??++")[2]} /></i>
+                    <i className="timestamp"><Message message = {"Score: "+message.message.split("++??*:;:;*??++")[3]} /></i>
+
                         </div>
-                        
-                       
                     </div>
           )
         }
@@ -70,6 +72,8 @@ class MessageList extends Component {
                     <div className="field">
                         <div class="triangle-isosceles right"> 
                      <Message message = {message.message.split("++??*:;:;*??++")[1]} />
+                     <i  className="timestamp"><Message message = {message.message.split("++??*:;:;*??++")[2]} /></i>
+                     <i className="timestamp"><Message message = {"Score: "+message.message.split("++??*:;:;*??++")[3]} /></i>
                         </div>
                     </div>
           )
@@ -77,11 +81,7 @@ class MessageList extends Component {
     });
     return (
       <div >
-        <div>
-          <div >
-        {messageNodes}
-        </div>
-        </div>  
+           {messageNodes} 
       </div>
     );
   }

@@ -70,7 +70,7 @@ else{
 SignIn(){
   let emil=this.state.emailid;
   let pass=this.state.password;
-  if(emil!==''&&pass!=='' && emil!="@gmail.com" && emil.length<30){
+  if(emil!==''&&pass!=='' && emil!=="@gmail.com" && emil.length<30){
   
   firebase.auth().signInWithEmailAndPassword(this.state.emailid, this.state.password).catch(function(error) {
     var errorCode = error.code;

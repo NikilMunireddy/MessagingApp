@@ -16,7 +16,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({width: 400, height: 725,resizable: true,icon:'iconimage.png'});
 
     // and load the index.html of the app.
-    mainWindow.loadURL('https://mail.google.com/mail/u/2/#inbox');
+    mainWindow.loadURL('http://127.0.0.1:3000');
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
